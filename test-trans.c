@@ -112,14 +112,14 @@ void eval_perf(unsigned int s, unsigned int E, unsigned int b)
                     flag = 1;
 
                 /* Valgrind creates many spurious accesses to the
-                   stack that have nothing to do with the students
-                   code. At the moment, we are ignoring all stack
-                   accesses by using the simple filter of recording
-                   accesses to only the low 32-bit portion of the
-                   address space. At some point it would be nice to
-                   try to do more informed filtering so that would
-                   eliminate the valgrind stack references while
-                   include the student stack references. */
+                stack that have nothing to do with the students
+                code. At the moment, we are ignoring all stack
+                accesses by using the simple filter of recording
+                accesses to only the low 32-bit portion of the
+                address space. At some point it would be nice to
+                try to do more informed filtering so that would
+                eliminate the valgrind stack references while
+                include the student stack references. */
                 if (flag && addr < 0xffffffff) {
                     fputs(buf, part_trace_fp);
                 }
@@ -150,14 +150,14 @@ void eval_perf(unsigned int s, unsigned int E, unsigned int b)
         func_list[i].num_misses = misses;
         func_list[i].num_evictions = evictions;
         printf("func %u (%s): hits:%u, misses:%u, evictions:%u\n",
-               i, func_list[i].description, hits, misses, evictions);
+            i, func_list[i].description, hits, misses, evictions);
     
         /* If it is transpose_submit(), record number of misses */
         if (results.funcid == i) {
             results.misses = misses;
         }
     }
-  
+
 }
 
 /*

@@ -71,7 +71,7 @@ void correctTrans(int M, int N, int A[N][M], int B[M][N])
  *     of functions to be tested
  */
 void registerTransFunction(void (*trans)(int M, int N, int[N][M], int[M][N]), 
-                           char* desc)
+                        char* desc)
 {
     func_list[func_counter].func_ptr = trans;
     func_list[func_counter].description = desc;
